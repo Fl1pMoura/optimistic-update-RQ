@@ -1,15 +1,20 @@
-import { sleep } from '../libs/utils';
-import { IUser } from '../types/IUser';
+import { sleep } from "../libs/utils";
+import { IUser } from "../types/IUser";
 
-type IUpdateUserDTO = Partial<Omit<IUser, 'id'>> & { id: string };
+type IUpdateUserDTO = Partial<Omit<IUser, "id">> & { id: string };
 
-export async function updateUser({ id, blocked, name, username }: IUpdateUserDTO) {
+export async function updateUser({
+  id,
+  blocked,
+  name,
+  username,
+}: IUpdateUserDTO) {
   await sleep(500);
 
   const response = await fetch(`http://localhost:3000/users/${id}`, {
-    method: 'PATCH',
+    method: "PATCH",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
     body: JSON.stringify({
       blocked,

@@ -1,12 +1,12 @@
-import { QueryClientProvider } from '@tanstack/react-query';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
-import { ThemeProvider } from './app/contexts/ThemeContext';
-import { queryClient } from './app/libs/queryClient';
-import { Header } from './components/Header';
-import { UserForm } from './components/UserForm';
-import { UsersList } from './components/UsersList';
-import { Toaster } from './components/ui/Toaster';
+import { ThemeProvider } from "./app/contexts/ThemeContext";
+import { queryClient } from "./app/libs/queryClient";
+import { Header } from "./components/Header";
+import { UserForm } from "./components/UserForm";
+import { UsersList } from "./components/UsersList";
+import { Toaster } from "./components/ui/Toaster";
 
 export function App() {
   return (

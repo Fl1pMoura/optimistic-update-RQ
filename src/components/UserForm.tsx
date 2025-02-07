@@ -1,13 +1,13 @@
-import { useCreateUser } from '@/app/hooks/useCreateUser';
-import { useState } from 'react';
+import { useCreateUser } from "@/app/hooks/useCreateUser";
+import { useState } from "react";
 
-import { toast } from 'sonner';
-import { Button } from './ui/Button';
-import { Input } from './ui/Input';
+import { toast } from "sonner";
+import { Button } from "./ui/Button";
+import { Input } from "./ui/Input";
 
 export function UserForm() {
-  const [name, setName] = useState('');
-  const [username, setUsername] = useState('');
+  const [name, setName] = useState("");
+  const [username, setUsername] = useState("");
 
   const { createUser } = useCreateUser();
 
@@ -15,8 +15,8 @@ export function UserForm() {
     event.preventDefault();
 
     try {
-      setName('');
-      setUsername('');
+      setName("");
+      setUsername("");
 
       await createUser({
         name,
@@ -24,7 +24,7 @@ export function UserForm() {
         blocked: false,
       });
     } catch {
-      toast.error('Erro ao cadastrar o usuário!');
+      toast.error("Erro ao cadastrar o usuário!");
     }
   }
 
@@ -34,18 +34,16 @@ export function UserForm() {
         <Input
           placeholder="Nome do usuário"
           value={name}
-          onChange={event => setName(event.target.value)}
+          onChange={(event) => setName(event.target.value)}
         />
         <Input
           placeholder="@ no GitHub"
           value={username}
-          onChange={event => setUsername(event.target.value)}
+          onChange={(event) => setUsername(event.target.value)}
         />
       </div>
 
-      <Button className="mt-3 w-full">
-        Cadastrar
-      </Button>
+      <Button className="mt-3 w-full">Cadastrar</Button>
     </form>
   );
 }
